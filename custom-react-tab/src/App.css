@@ -1,0 +1,85 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box{
+  border: 2px solid grey;
+  width: 400px;
+  margin: auto;
+  margin-top: 50px
+}
+
+.tabs{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab{
+  background: #ccc;
+  flex:1;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid grey;
+  border-top: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.active-tab{
+  border: none;
+  background: #fff;
+}
+
+
+.active-tab::after{
+  border-bottom: 2px solid grey;
+  content: '';
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  background: initial;
+  animation: new 0.5s;
+}
+
+@keyframes new {
+  from{
+    bottom:50px;
+    left: 0;
+    background: gray
+  }
+  to{
+    bottom:0px;
+    left: 0;
+    border-bottom: 2px  solid grey;
+  }
+}
+
+
+.contents{
+  position: relative;
+}
+
+.content{
+  display: none;
+  position: relative;
+}
+
+.active-content{
+  display: block;
+  margin: 10px 0 0 10px;
+  transition: all 1s ease-in-out; 
+  animation: example 0.3s;
+}
+
+@keyframes example {
+  from{
+    margin: 10px 0 0 0px;
+  }
+  to{
+   margin-left: 10px;
+  }
+}
+
